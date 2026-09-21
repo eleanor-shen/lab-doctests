@@ -125,20 +125,16 @@ def max_num_4(a, b, c, d):
     >>> max_num_4(10,1,2,3)
     10
     '''
-    if a>b:
-        if a>c:
-            if a>d:
-                return a
-            return d
-        if c>d:
-            return c
-        return d
-    if b>c:
-        if b>d:
-            return b
-        if d>c:
-            return d
+    if a >= b and a >= c and a >= d:
+        return a
+
+    if b >= a and b >= c and b >= d:
+        return b
+
+    if c >= a and c >= b and c >= d:
         return c
+
+    return d
     
 
 
@@ -784,6 +780,7 @@ def filter_odd(xs):
     for x in xs:
         if x % 2 == 0:
             result = result + [x]
+    return result
 
 
 def filter_even(xs):
